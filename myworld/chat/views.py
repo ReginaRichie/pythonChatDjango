@@ -4,7 +4,7 @@ from django.template import loader
 
 
 def index(request):
-    response = JsonResponse({"login": True, 'method': HttpRequest.method})
+    response = JsonResponse({"login": True, 'method': request.method})
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "*"
     response["Access-Control-Max-Age"] = "1000"
