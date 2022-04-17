@@ -7,8 +7,17 @@ def index(request):
     dict_response = {}
 
     if request.method == 'POST':
-        if 'login' in request.POST and request.POST['login']:
-            dict_response['login'] = request.POST['login']
+        if 'login' in request.POST and request.POST['login'] and 'password' in request.POST and request.POST['password']:
+            if request.POST['login'] == 'regina':
+                dict_response['login'] = True
+            else:
+                dict_response['login'] = False
+
+            if request.POST['password'] == '123':
+                dict_response['password'] = True
+            else:
+                dict_response['password'] = False
+
 
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
