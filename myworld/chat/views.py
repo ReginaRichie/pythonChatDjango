@@ -13,7 +13,6 @@ def index(request):
             else:
                 dict_response['login'] = False
 
-
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "*"
