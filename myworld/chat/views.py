@@ -8,6 +8,7 @@ def index(request):
     if request.method == 'POST' and request.POST['login']:
         dict_response['login'] = request.POST['login']
 
+
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "*"
