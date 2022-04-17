@@ -7,7 +7,8 @@ def index(request):
     dict_response = {}
     if request.method == 'POST' and request.POST['login']:
         dict_response['login'] = request.POST['login']
-
+    else:
+        dict_response['login'] = 'не падай, плиз'
 
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
