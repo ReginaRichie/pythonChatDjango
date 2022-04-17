@@ -5,7 +5,8 @@ from django.template import loader
 
 def index(request):
     dict_response = {}
-    if request.method == 'POST' and request['login']:
+    # if request.method == 'POST' and request['login']:
+    if request.method == 'POST':
         dict_response['login'] = request['login']
 
     response = JsonResponse(dict_response)
