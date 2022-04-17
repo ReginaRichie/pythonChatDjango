@@ -8,7 +8,7 @@ def index(request):
 
     if request.method == 'POST':
         if 'login' in request.POST and request.POST['login'] and 'password' in request.POST and request.POST['password']:
-            if request.POST['login'] == 'regina' and request.POST['password'] == '123':
+            if request.POST['login'] == 'regina' and request.POST['password'] == '1234':
                 dict_response['login'] = True
             else:
                 dict_response['login'] = False
