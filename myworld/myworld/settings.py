@@ -25,7 +25,10 @@ SECRET_KEY = 'bfue54*anfjfev5)akh(wtd#!(djd7itqs(d#v%*jbe$-*0-)x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ev-gen.ru:3000',
+    'ev-gen.ru'
+]
 
 
 # Application definition
