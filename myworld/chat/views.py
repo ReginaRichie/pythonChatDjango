@@ -8,15 +8,10 @@ def index(request):
 
     if request.method == 'POST':
         if 'login' in request.POST and request.POST['login'] and 'password' in request.POST and request.POST['password']:
-            if request.POST['login'] == 'regina':
+            if request.POST['login'] == 'regina' and request.POST['password'] == '123':
                 dict_response['login'] = True
             else:
                 dict_response['login'] = False
-
-            if request.POST['password'] == '123':
-                dict_response['password'] = True
-            else:
-                dict_response['password'] = False
 
 
     response = JsonResponse(dict_response)
