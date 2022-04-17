@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'ev-gen.ru:3000',
-    'ev-gen.ru'
+    'ev-gen.ru',
+    '127.0.0.1:8000',
+    '127.0.0.1',
 ]
 
 
