@@ -5,10 +5,8 @@ from django.template import loader
 
 def index(request):
     dict_response = {}
-    # if request.method == 'POST' and request['login']:
-    if request.method == 'POST':
-        # dict_response['login'] = request['login']
-        dict_response['login'] = 'kk'
+    if request.method == 'POST' and request.POST['login']:
+        dict_response['login'] = request.POST['login']
 
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
