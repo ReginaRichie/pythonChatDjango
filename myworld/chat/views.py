@@ -7,7 +7,8 @@ def index(request):
     dict_response = {}
     # if request.method == 'POST' and request['login']:
     if request.method == 'POST':
-        dict_response['login'] = request['login']
+        # dict_response['login'] = request['login']
+        dict_response['login'] = 'kk'
 
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
@@ -15,3 +16,4 @@ def index(request):
     response["Access-Control-Max-Age"] = "1000"
     response["Access-Control-Allow-Headers"] = "*"
     return response
+
