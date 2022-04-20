@@ -6,10 +6,11 @@ from .models import Logins
 def index(request):
     dict_response = {}
     mymembers = Logins.objects.all().values()
-    output = ""
+    output = []
     for x in mymembers:
-        output += x["login"]
-    # print(output)
+        output.append(x["login"])
+
+    dict_response['test'] = output
     
     if request.method == 'POST':
         if 'login' in request.POST and request.POST['login'] and 'password' in request.POST and request.POST['password']:
@@ -23,5 +24,5 @@ def index(request):
     response["Access-Control-Allow-Methods"] = "*"
     response["Access-Control-Max-Age"] = "1000"
     response["Access-Control-Allow-Headers"] = "*"
-    #return response, output
-    return output
+    return response
+    #return output
