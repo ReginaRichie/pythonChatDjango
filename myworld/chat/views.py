@@ -31,7 +31,7 @@ def session_data_get(request):
     request.session['num_visits'] = num_visits + 1
     request.session.modified = True
     print(num_visits)
-    return {'num_visits': num_visits}
+    return {'num_visits': request.session['num_visits']}
     #return render(request, 'views.py', context={'num_visits': num_visits})
 
 
