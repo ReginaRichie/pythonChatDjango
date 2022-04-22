@@ -16,9 +16,30 @@ def index(request):
             else:
                 dict_response['login'] = False
 
+    dict_response['session'] = session_data_get(request)
+
     response = JsonResponse(dict_response)
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "*"
     response["Access-Control-Max-Age"] = "1000"
     response["Access-Control-Allow-Headers"] = "*"
     return response
+
+
+def session_data_get(request):
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+    request.session.modified = True
+    return render(request, 'views.py', context={'num_visits': num_visits})
+
+
+
+
+
+
+
+
+
+
+
+
