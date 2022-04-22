@@ -28,6 +28,7 @@ def index(request):
 
 def session_data_get(request):
     num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits
     #request.session['num_visits'] = num_visits + 1
     #request.session.modified = True
     #print(num_visits)
